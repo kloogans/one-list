@@ -12,6 +12,7 @@ button.addEventListener('click', (event) => {
   event.preventDefault()
   const listItem = input.value
   const li = document.createElement('li')
+  li.setAttribute('class', 'animated fadeIn')
   li.textContent = listItem
   list.appendChild(li)
   let didDblClick = false
@@ -19,6 +20,7 @@ button.addEventListener('click', (event) => {
     setTimeout(() => {
       if (!didDblClick) {
         li.style.textDecoration = 'line-through'
+        li.style.backgroundColor = '#333'
       }
     }, 300)
   })

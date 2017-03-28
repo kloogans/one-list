@@ -1,4 +1,5 @@
 @import 'utility';
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Open+Sans:300');
 
 $base-text-size: 16px;
 $base-font-family: sans-serif;
@@ -12,13 +13,15 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 
   @include linearGrad(#78c75c, #ade799);
 }
 
 h1 {
+  font-family: 'Bree Serif';
+  font-size: 5em;
   color: $primaryWhite;
 }
 
@@ -32,9 +35,21 @@ ul {
   padding: 0;
 
   > li {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 270px;
+    height: 3.4em;
+    background-color: $niceRed;
     text-align: center;
     margin: 0.5em 0;
+    font-family: 'Open Sans';
+    font-size: 1.4em;
+    font-weight: 300;
+    color: $primaryWhite;
+    user-select: none;
+    border-radius: $borderRadius;
   }
 }
 
@@ -44,7 +59,35 @@ form {
   align-items: center;
   justify-content: center;
 
+  input[type="text"] {
+    width: 270px;
+    font-size: 5em;
+    color: lighten($primaryBlack, 10%);
+    text-align: center;
+    border: none;
+    border-radius: 7px;
+
+    &:focus,
+    &:hover {
+      outline: 0;
+    }
+  }
+
   button {
+    border: none;
+    border-radius: $borderRadius;
+    background-color: #98d6e7;
     margin-top: 1em;
+    width: 270px;
+    height: 2.3em;
+    color: $primaryWhite;
+    font-size: 1.5em;
+    transition: all 0.5s ease;
+
+    &:focus,
+    &:hover {
+      outline: 0;
+      background-color: $niceRed;
+    }
   }
 }
