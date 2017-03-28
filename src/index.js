@@ -14,10 +14,16 @@ button.addEventListener('click', (event) => {
   const li = document.createElement('li')
   li.textContent = listItem
   list.appendChild(li)
+  let didDblClick = false
   li.addEventListener('click', () => {
-    li.style.textDecoration = 'line-through'
+    setTimeout(() => {
+      if (!didDblClick) {
+        li.style.textDecoration = 'line-through'
+      }
+    }, 300)
   })
   li.addEventListener('dblclick', () => {
+    didDblClick = true
     list.removeChild(li)
   })
   form.reset()

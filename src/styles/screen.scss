@@ -14,6 +14,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @include linearGrad(#78c75c, #ade799);
+}
+
+h1 {
+  color: $primaryWhite;
 }
 
 ul {
@@ -22,9 +28,13 @@ ul {
   align-items: center;
   justify-content: center;
   list-style-type: none;
+  width: 400px;
+  padding: 0;
 
   > li {
+    width: 100%;
     text-align: center;
+    margin: 0.5em 0;
   }
 }
 
