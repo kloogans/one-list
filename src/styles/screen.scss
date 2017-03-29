@@ -1,9 +1,6 @@
 @import 'utility';
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif|Open+Sans:300');
 
-$base-text-size: 16px;
-$base-font-family: sans-serif;
-
 html {
   height: 100%;
 }
@@ -15,14 +12,23 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-
-  @include linearGrad(#78c75c, #ade799);
+  background-image: url('http://imgur.com/Eg7JtZ8.jpg');
+  // @include linearGrad(#78c75c, #bde8ae);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Open Sans';
 }
 
 h1 {
   font-family: 'Bree Serif';
   font-size: 5em;
   color: $primaryWhite;
+}
+
+main {
+  flex: 1;
 }
 
 ul {
@@ -39,9 +45,9 @@ ul {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    width: 270px;
+    width: $standardWidth;
     height: 3.4em;
-    background-color: $niceRed;
+    background: rgba($niceRed, 0.7);
     text-align: center;
     margin: 0.5em 0;
     font-family: 'Open Sans';
@@ -60,12 +66,13 @@ form {
   justify-content: center;
 
   input[type="text"] {
-    width: 270px;
+    width: $standardWidth;
+    background-color: transparent;
     font-size: 5em;
-    color: lighten($primaryBlack, 10%);
-    text-align: center;
+    color: $niceBlue;
+    text-align: left;
     border: none;
-    border-radius: 7px;
+    border-bottom: 3px dotted $primaryWhite;
 
     &:focus,
     &:hover {
@@ -74,20 +81,12 @@ form {
   }
 
   button {
-    border: none;
-    border-radius: $borderRadius;
-    background-color: #98d6e7;
-    margin-top: 1em;
-    width: 270px;
-    height: 2.3em;
-    color: $primaryWhite;
-    font-size: 1.5em;
-    transition: all 0.5s ease;
-
-    &:focus,
-    &:hover {
-      outline: 0;
-      background-color: $niceRed;
-    }
+    display: none;
   }
+}
+
+.copyright {
+  color: $primaryWhite;
+  font-size: 0.6em;
+  margin: 0.7em auto;
 }
